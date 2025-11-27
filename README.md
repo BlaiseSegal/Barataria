@@ -1,8 +1,10 @@
-# POC_BARATARIA
+# BARATARIA
+
+Origin Trail (TRAC), Neuro Web (Neuro), Polkadot (DOT)  challenge ! 
 
 Prototype aligned with the **Barataria Manifesto**: a distributed
 chivalry of trust, throneless, where reputation is a local,
-probationary, and interchain flow.
+probationary, and interchain flow. 
 
 This model---without a throne---outsources integrity assessment,
 prohibits centralized decision‑making, and embeds trust in the
@@ -103,7 +105,7 @@ in an x402 payment agent supported by OriginTrail DKG and XCM.
     python tools/publish_knowledge.py
     ```
 
-    Publishes `assets/guild-42-asset.jsonld` to the DKG (`epochs_num=8`)
+    Publishes `assets/guild-giant-asset.jsonld` and `assets/guild-windmill-asset.jsonld` to the DKG (`epochs_num=8`)
     and returns a UAL Sancho can use.
 
 3)  **Run Sancho (local decision + payment)**
