@@ -56,7 +56,7 @@ in an x402 payment agent supported by OriginTrail DKG and XCM.
 -   **Knowledge (DKG)**:
     -   JSON‑LD schema and SHACL shapes: `assets/guild-schema.jsonld`,
         `assets/guild-shapes.ttl`.\
-    -   Example published KA: `assets/guild-42-asset.jsonld`
+    -   Example published KA: `assets/guild-giant-asset.jsonld`, `assets/guild-windmill-asset.jsonld`
         (integrityScore, subsidyRatio, sigma, cartelStatus, audit).\
     -   Publish/query helpers: `tools/publish_knowledge.py`,
         `tools/query_debug.py`, `tools/test_connect.py`.
@@ -108,10 +108,24 @@ in an x402 payment agent supported by OriginTrail DKG and XCM.
     Publishes `assets/guild-giant-asset.jsonld` and `assets/guild-windmill-asset.jsonld` to the DKG (`epochs_num=8`)
     and returns a UAL Sancho can use.
 
-3)  **Run Sancho (local decision + payment)**
+3)  **Run Sanson (integrity analytics before payment)**
+
+    -   Set the `guild` value in the `_demo` block at the bottom of
+        `tools/sanson_agent.py` to the UAL returned in step 2 (for
+        example `urn:barataria:guild:giant`).\
+    -   Execute `python tools/sanson_agent.py` (or
+        `SANSON_FORCE_MOCK=1 python tools/sanson_agent.py` for
+        deterministic demo data).\
+    -   Sanson pulls yield/cartel KAs, computes
+        `subsidyRatio`/`cartelFlag`/`sigma`, and publishes
+        `ka://analytics/integrity/<guild>/vX` for Sancho to consume.
+
+4)  **Run Sancho (local decision + payment)**
 
     -   Fill `input_task` in `tools/main_agent_sancho.py` (service_id,
-        amount, execution_mode).\
+        amount, execution_mode). Sancho reads the latest integrity KA
+        published by Sanson; if missing, it falls back to
+        `FALLBACK_RULES` (hardcoded thresholds).\
     -   The agent:
         -   builds two SPARQL queries (reputation + ruleset) to the
             DKG,\
@@ -140,7 +154,7 @@ in an x402 payment agent supported by OriginTrail DKG and XCM.
 ## Manifesto Agent Alignment
 
 -   **Sancho** (present): payment agent, local heuristic, trace audit.\
--   **Sanson** (to connect): integrity index computation, analytics KA
+-   **Sanson** (present): integrity index computation, analytics KA
     publication (yield, disputes, cartel-index).\
 -   **Quichotte** (to connect): topological analyses (link farms,
     cartels), alert publication (KA).\
