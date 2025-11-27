@@ -1,0 +1,24 @@
+{
+  "public": {
+    "@context": {
+      "@vocab": "http://schema.org/",
+      "trust": "https://barataria.arch/ns#",
+      "integrityScore": "trust:integrityScore",
+      "subsidyRatio": "trust:subsidyRatio",
+      "sigma": "trust:sigma",
+      "cartelStatus": "trust:cartelStatus",
+      "contractAddress": "trust:contractAddress",
+      "tcrContract": "trust:tcrContract"
+    },
+    "@id": "urn:barataria:guild:windmill",
+    "@type": "Organization",
+    "name": "Arbitration Guild windmill",
+    "description": "Guild specializing in IoT data stream arbitration like giant but with higher integrity.",
+    "contractAddress": "eip155:20430:0x4242424242424242424242424242424242424242",
+    "tcrContract": "eip155:20430:0xTCR000000000000000000000000000000000000",
+    "integrityScore": 0.95,
+    "subsidyRatio": 0.10,
+    "sigma": 0.92,
+    "cartelStatus": "CartelAbsent"
+  }
+}

@@ -1,0 +1,60 @@
+@prefix sh:   <http://www.w3.org/ns/shacl#> .
+@prefix schema: <http://schema.org/> .
+@prefix trust: <http://barataria.arch/ns#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+trust:GuildShape
+    a sh:NodeShape ;
+    sh:targetClass trust:Guild ;
+
+    # Doit être aussi une Organization
+    sh:property [
+        sh:path rdf:type ;
+        sh:hasValue schema:Organization ;
+    ] ;
+
+    # integrityScore ∈ [0,1]
+    sh:property [
+        sh:path trust:integrityScore ;
+        sh:datatype xsd:float ;
+        sh:minInclusive 0.0 ;
+        sh:maxInclusive 1.0 ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+    ] ;
+
+    # subsidyRatio ∈ [0,1]
+    sh:property [
+        sh:path trust:subsidyRatio ;
+        sh:datatype xsd:float ;
+        sh:minInclusive 0.0 ;
+        sh:maxInclusive 1.0 ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+    ] ;
+
+    # sigma ∈ [0,1]
+    sh:property [
+        sh:path trust:sigma ;
+        sh:datatype xsd:float ;
+        sh:minInclusive 0.0 ;
+        sh:maxInclusive 1.0 ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+    ] ;
+
+    # cartelStatus = un CartelStatus connu
+    sh:property [
+        sh:path trust:cartelStatus ;
+        sh:in ( trust:CartelAbsent trust:CartelSuspected trust:CartelConfirmed ) ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+    ] ;
+
+    # contractAddress obligatoire
+    sh:property [
+        sh:path trust:contractAddress ;
+        sh:datatype xsd:anyURI ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+    ] .

@@ -1,0 +1,49 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "trust": "http://barataria.arch/ns#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+
+    "Guild": "trust:Guild",
+    "CartelStatus": "trust:CartelStatus",
+    "CartelAbsent": "trust:CartelAbsent",
+    "CartelSuspected": "trust:CartelSuspected",
+    "CartelConfirmed": "trust:CartelConfirmed",
+
+    "integrityScore": {
+      "@id": "trust:integrityScore",
+      "@type": "xsd:float"
+    },
+    "subsidyRatio": {
+      "@id": "trust:subsidyRatio",
+      "@type": "xsd:float"
+    },
+    "sigma": {
+      "@id": "trust:sigma",
+      "@type": "xsd:float"
+    },
+
+    "cartelStatus": {
+      "@id": "trust:cartelStatus",
+      "@type": "@id"
+    },
+
+    "contractAddress": {
+      "@id": "trust:contractAddress",
+      "@type": "xsd:anyURI"
+    },
+    "tcrContract": {
+      "@id": "trust:tcrContract",
+      "@type": "xsd:anyURI"
+    },
+
+    "lastAudit": {
+      "@id": "trust:lastAudit",
+      "@type": "xsd:dateTime"
+    },
+    "auditedBy": {
+      "@id": "trust:auditedBy",
+      "@type": "@id"
+    }
+  }
+}

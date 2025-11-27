@@ -1,0 +1,24 @@
+{
+  "public": {
+    "@context": {
+      "@vocab": "http://schema.org/",
+      "trust": "https://barataria.arch/ns#",
+      "integrityScore": "trust:integrityScore",
+      "subsidyRatio": "trust:subsidyRatio",
+      "sigma": "trust:sigma",
+      "cartelStatus": "trust:cartelStatus",
+      "contractAddress": "trust:contractAddress",
+      "tcrContract": "trust:tcrContract"
+    },
+    "@id": "urn:barataria:guild:giant",
+    "@type": "Organization",
+    "name": "Arbitration Guild giant",
+    "description": "Guild specializing in IoT data stream arbitration.",
+    "contractAddress": "eip155:20430:0x4343434343434343434343434343434343434343",
+    "tcrContract": "eip155:20430:0xTCR000000000000000000000000000000000000",
+    "integrityScore": 0.52,
+    "subsidyRatio": 0.60,
+    "sigma": 0.92,
+    "cartelStatus": "CartelAbsent"
+  }
+}
