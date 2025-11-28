@@ -1,8 +1,6 @@
 # BARATARIA
 
-<object data="https://github.com/BlaiseSegal/Barataria/blob/main/%20Barataria%20Manifesto%20(EN).pdf" width="1000" height="1000" type="application/pdf">
-  <a href="https://github.com/BlaiseSegal/Barataria/blob/main/%20Barataria%20Manifesto%20(EN).pdf">Open the Barataria Manifesto (EN)</a>
-</object>
+[![Barataria Manifesto (EN) preview](assets/barataria-manifesto-en.png)](./%20Barataria%20Manifesto%20(EN).pdf)
 
 Origin Trail (TRAC), Neuro Web (Neuro), Polkadot (DOT)  challenge ! 
 
